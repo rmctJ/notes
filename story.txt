@@ -1,2 +1,6 @@
+<< From master fix.
+In master branch, here is some change. They should be pulled into branch1.
+>> From branch1.
 A line edited in branch1
 Line2 edited in branch1
+
