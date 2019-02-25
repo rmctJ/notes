@@ -1,1 +1,2 @@
 A line edited in branch1
+Line2 edited in branch1
