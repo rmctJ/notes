@@ -1,1 +1,1 @@
-
+In master branch, here is some change. They should be pulled into branch1.
