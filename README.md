@@ -1,2 +1,2 @@
 # test
-https://rmctj.github.io/io.css/
+https://rmctj.github.io/io.css/index.html
