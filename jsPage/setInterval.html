@@ -1,16 +1,64 @@
 <!DOCTYPE HTML>
 <html>
   <head>
+  <meta charset="UTF-8">
   <title>jsPage.setInterval</title>
   <script>
+  var pauseFlag = false;
+  var lastCountTime = 0;
+  var diffTime = 0;
+  var intervalID = 0;
+  
   function printTime() {
-    document.getElementById("div_currentTime").innerText = Date.now().toLocaleString();
+    var d = Date.now();
+    document.getElementById("div_currentTime").innerText = d.toLocaleString();
   }
   
+  function countTime() {
+    var currentTime = Date.now();
+	if (lastCountTime != 0 && (!pauseFlag)) {
+	  diffTime += currentTime - lastCountTime;
+	}
+	lastCountTime = currentTime;
+	var diffTime2 = new Date(diffTime);
+
+	document.getElementById("div_currentTime").innerHTML =
+	  "计时：" + diffTime2.getUTCHours() + ":" + diffTime2.getUTCMinutes() + ":" + diffTime2.getUTCSeconds() + "." + diffTime2.getUTCMilliseconds();
+  }
+  
+  function reversePause() {
+	pauseFlag = !pauseFlag;
+  }
+  
+  function startInterval() {
+    document.getElementById("btn_startInterval").disabled = true;
+	pauseFlag = false;
+	diffTime = 0;
+    if (intervalID != 0)
+	  return;
+	startTime = Date.now();  
+    intervalID = window.setInterval(countTime, 1000);
+	document.getElementById("div_log").innerText = "intervalID=" + intervalID;
+	document.getElementById("btn_stopInterval").disabled = false;
+  }
+  
+  function stopInterval() {
+    document.getElementById("btn_stopInterval").disabled = true;
+	if (intervalID == 0)
+	  return;
+	window.clearInterval(intervalID);
+	startTime = 0;
+	intervalID = 0;
+	document.getElementById("btn_startInterval").disabled = false;
+  }
   </script>
   </head>
 <body>
-<div id="div_currentTime"></div>
+<h1 id="div_currentTime"></h1>
+<div id="div_log"></div>
 <button onClick="printTime()">printTime</button>
+<button onClick="startInterval()" id="btn_startInterval">startInterval</button>
+<button onClick="stopInterval()" id="btn_stopInterval" disabled>stopInterval</button>
+<button onClick="reversePause()">pause</button>
 </body>
 </html>
