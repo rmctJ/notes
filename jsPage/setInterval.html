@@ -30,6 +30,10 @@
 	pauseFlag = !pauseFlag;
   }
   
+  function writeLog(log) {
+	document.getElementById("div_log").innerText = log;
+  }
+  
   function startInterval() {
     document.getElementById("btn_startInterval").disabled = true;
 	pauseFlag = false;
@@ -38,7 +42,7 @@
 	  return;
 	startTime = Date.now();  
     intervalID = window.setInterval(countTime, 1000);
-	document.getElementById("div_log").innerText = "intervalID=" + intervalID;
+	writeLog("intervalID=" + intervalID);
 	document.getElementById("btn_stopInterval").disabled = false;
   }
   
@@ -50,7 +54,7 @@
 	startTime = 0;
 	intervalID = 0;
 	document.getElementById("btn_startInterval").disabled = false;
-	document.getElementById("div_log").innerText = "";
+	writeLog("");
   }
   </script>
   </head>
