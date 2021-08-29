@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Structured note sample using HTML</title>
+</head>
+
+<body>
+	<header>Page header node</header>
+
+	<nav>Nav node</nav>
+
+	<main>
+		<ul>Main node
+			<li>Contain the main content for your web page;</li>
+			<li>The content should be unique, not repeated on other pages;</li>
+			<li>The main element should be unique on a page.</li>
+			<li>The main element shouldn't be placed within article, aside, header, foot, nav elements.</li>
+		</ul>
+	</main>
+
+	<article>
+		<header>Article-1 header node</header>
+		<ul>Article node
+			<li>Contain a piece of self-contained content that could be distributed outside the context of the page.
+			</li>
+		</ul>
+
+		<section>Section in Article-1 <br>
+			<button>A button</button>
+		</section>
+
+		<section>
+			<code>Single line code.</code>
+			<pre><code>Multi lines code - line 1
+Multi lines code - line 2
+Multi lines code - line 3
+No need of &lt;br&gt;</code></pre>
+		</section>
+
+		<section>A KBD sample <br>
+			<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd>
+		</section>
+
+		<section>A mark sample <br>
+			Here is a <mark>mark</mark> node.
+		</section>
+
+		<section>Meter samples <br>
+			<meter min=0 max=100 low=33 high=66 optimum=80 value=20>20/100</meter>
+			<meter min=0 max=100 low=33 high=66 optimum=80 value=40>40/100</meter>
+			<meter min=0 max=100 low=33 high=66 optimum=80 value=70>70/100</meter>
+			<meter min=0 max=100 low=33 high=66 optimum=80 value=90>90/100</meter>
+		</section>
+
+		<section>Progress samples <br>
+			<progress id="file" max="100" value="20">20%</progress>
+			<progress id="file" max="100" value="40">40%</progress>
+			<progress id="file" max="100" value="70">70%</progress>
+			<progress id="file" max="100" value="90">90%</progress>
+		</section>
+
+		<section>Blockquote sample <br>
+			<blockquote cite="https://www.huxley.net/bnw/four.html">
+				<p>Words can be like X-rays, if you use them properly—they’ll go through anything. You read and you’re
+					pierced.</p>
+			</blockquote>
+		</section>
+
+		<section>figure sample <br>
+			<figure>
+				<blockquote cite="https://www.huxley.net/bnw/four.html">
+					<p>Words can be like X-rays, if you use them properly—they’ll go through anything. You read and
+						you’re pierced.</p>
+				</blockquote>
+				<figcaption>—Aldous Huxley, <cite>Brave New World</cite></figcaption>
+			</figure>
+		</section>
+
+		<section>Output sample
+			<form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
+				<input type="range" id="b" name="b" value="50" /> +
+				<input type="number" id="a" name="a" value="10" /> =
+				<output name="result" for="a b">60</output>
+			</form>
+		</section>
+
+		<section>q in p sample<br>
+			<p>When Dave asks HAL to open the pod bay door, HAL answers:
+				<q cite="https://www.imdb.com/title/tt0062622/quotes/qt0396921">I'm sorry, Dave. I'm afraid I can't do
+					that.</q>
+			</p>
+		</section>
+
+		<section>ruby rp rt sample <br>
+			<ruby>明日
+				<rp>(</rp>
+				<rt>あした</rt>
+				<rp>)</rp>
+			</ruby>
+		</section>
+
+		<section>samp sample <br>
+			<p>As sample: <samp>Keyboard not found <br>Press F1 to continue</samp></p>
+		</section>
+
+		<section>table sample <br>
+			<table>
+				<caption><a href="https://www.w3.org/TR/WCAG20-TECHS/H43.html">Sample table</a></caption>
+				<tr>
+					<th rowspan="2" id="h">Homework</th>
+					<th colspan="3" id="e">Exams</th>
+					<th colspan="3" id="p">Projects</th>
+				</tr>
+				<tr>
+					<th id="e1" headers="e">1</th>
+					<th id="e2" headers="e">2</th>
+					<th id="ef" headers="e">Final</th>
+					<th id="p1" headers="p">1</th>
+					<th id="p2" headers="p">2</th>
+					<th id="pf" headers="p">Final</th>
+				</tr>
+				<tr>
+					<td headers="h">15%</td>
+					<td headers="e e1">15%</td>
+					<td headers="e e2">15%</td>
+					<td headers="e ef">20%</td>
+					<td headers="p p1">10%</td>
+					<td headers="p p2">10%</td>
+					<td headers="p pf">15%</td>
+				</tr>
+			</table>
+		</section>
+
+		<footer>Article-1 footer node</footer>
+	</article>
+
+
+	<footer>Footer node
+		<ul>
+			<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">
+					MDN HTML Elements references</a></li>
+			<li><a href="https://blog.teamtreehouse.com/use-html5-sectioning-elements">
+					How to use the HTML5 sectioning elements</a></li>
+		</ul>
+	</footer>
+</body>
+
+</html>
